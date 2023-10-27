@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>User Management</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to left, #cac728,#6ddbd1,#cd2cbd);
+        }
+        .serv-links {
+            /*border: 2px solid white;*/
+            height: 375px;
+            width: 375px;
+            border: 2px solid lightgreen;
+            background-image: linear-gradient(45deg,#3023AE 0%,#FF0099 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            position: relative;
+        }
+        .main-links {
+            position: absolute;
+            margin: 50px 100px;
+
+        }
+        .linked {
+            font-size: 20px;
+            padding: 10px 15px;
+            margin: 10px -32px;
+            color: white;
+            background-image: linear-gradient(135deg, #1f4037 10%, #99f2c8 100%);
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div>
+
+            <h1 style="color: red; border-radius: 10px;background: aqua;" align="center">User Management</h1>
+            <p style=" margin-top: 2rem; color: blueviolet; font-size: 25px;background: greenyellow; width: 25%; border-radius: 10px; margin-left: 37%;" align="center">Welcome to Home Page</p>
+        </div>
+
+        <div class="serv-links">
+            <div class="main-links">
+                <p class="linked" id="userDetail">Add User Account</p>
+                <p class="linked" id="bankDetail">Add User Bank Account</p>
+                <p class="linked" id="listUser">List User Details</p>
+                <p class="linked" id="listBank">List Bank Account</p>
+            </div>
+
+        </div>
+        <script>
+            let addUser = document.querySelector("#userDetail");
+            let bankUser = document.querySelector("#bankDetail");
+            let listUser = document.querySelector("#listUser");
+            let listBank = document.querySelector("#listBank");
+
+            addUser.addEventListener('click', sendServletUser);
+            bankUser.addEventListener('click', sendServletBank);
+            listUser.addEventListener('click', listServletUser);
+            listBank.addEventListener('click', listServletBank);
+
+            function sendServletUser() {
+                window.location.href = "addUser.html";
+            }
+            function sendServletBank() {
+                window.location.href = "addBank.html";
+            }
+            function listServletUser() {
+                window.location.href = "listUser.jsp";
+            }
+            function listServletBank() {
+                window.location.href = "listBank.jsp";
+            }
+        </script>
+    </body>
+</html>
